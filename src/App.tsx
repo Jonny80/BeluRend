@@ -1,17 +1,28 @@
 import './App.css'
 import {Canvas} from "@react-three/fiber";
+import Cube from "./meshes/Cube.tsx";
+import {OrbitControls} from "@react-three/drei";
+
+
+
 
 function App() {
 
+
   return (
-    <Canvas>
-      <ambientLight intensity={0.1}/>
-      <directionalLight color={"blue"} position={[0,0,5]}/>
-        <mesh>
-          <boxGeometry args={[2,2,2]}/>
-          <meshStandardMaterial/>
-        </mesh>
-    </Canvas>
+      <div>
+          <Canvas style={{
+              width:'100vw',
+              height:'100vh',
+              alignItems:'center',
+              justifyContent:'center'
+          }}>
+              <OrbitControls />
+              <axesHelper />
+              <Cube />
+          </Canvas>
+      </div>
+
   )
 }
 
