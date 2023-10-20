@@ -1,10 +1,9 @@
 import {MutableRefObject, useMemo, useRef} from "react";
-import {BufferGeometry,  FileLoader, Material, Mesh, NormalBufferAttributes, Object3DEventMap} from "three";
-import {useLoader} from "@react-three/fiber";
+import {BufferGeometry, Material, Mesh, NormalBufferAttributes, Object3DEventMap} from "three";
+import vertexShader from "../shaders/vertex.glsl?raw"
+import fragmentShader from "../shaders/fragment.glsl?raw"
 export default function Cube(){
 
-    const fragmentShader = useLoader(FileLoader,'./shaders/fragment.glsl');
-    const vertexShader = useLoader(FileLoader,'./shaders/vertex.glsl');
 
     // little ts hack 'not proud of it'
     const mesh :  MutableRefObject<Mesh<BufferGeometry<NormalBufferAttributes>, Material | Material[], Object3DEventMap>> | any = useRef();
