@@ -27,21 +27,6 @@ function App() {
           }} camera={{ position: [15, 15, 15] }}
           >
               <OrbitControls />
-              <Blob position={getRandompos(-10,10)} />
-              <Blob position={getRandompos(-10,10)} />
-              <Blob position={getRandompos(-10,10)} />
-              <Blob position={getRandompos(-10,10)} />
-              <Blob position={getRandompos(-10,10)} />
-              <Blob position={getRandompos(-10,10)} />
-              <Blob position={getRandompos(-10,10)} />
-              <Blob position={getRandompos(-10,10)} />
-              <Blob position={getRandompos(-10,10)} />
-              <Blob position={getRandompos(-10,10)} />
-              <Blob position={getRandompos(-10,10)} />
-              <Blob position={getRandompos(-10,10)} />
-              <Blob position={getRandompos(-10,10)} />
-              <Blob position={getRandompos(-10,10)} />
-              <Blob position={getRandompos(-10,10)} />
           </Canvas>
       </div>
 
