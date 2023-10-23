@@ -1,5 +1,5 @@
 import './App.css'
-import {Canvas} from "@react-three/fiber";
+import {Canvas, Vector3} from "@react-three/fiber";
 import {OrbitControls} from "@react-three/drei";
 import Blob from "./meshes/Blob.tsx";
 
@@ -7,7 +7,14 @@ import Blob from "./meshes/Blob.tsx";
 
 
 function App() {
-
+    function between(min:number, max:number) {
+        return Math.floor(
+            Math.random() * (max - min) + min
+        )
+    }
+    function getRandompos(min:number, max:number):Vector3{
+        return [between(min,max),between(min,max),between(min,max)]
+    }
 
   return (
       <div>
@@ -15,12 +22,26 @@ function App() {
               width:'100vw',
               height:'100vh',
               alignItems:'center',
-              justifyContent:'center'
-          }} camera={{ position: [1.0, 1.5, 1.0] }}
+              justifyContent:'center',
+              backgroundColor:'black'
+          }} camera={{ position: [15, 15, 15] }}
           >
               <OrbitControls />
-              <axesHelper />
-              <Blob />
+              <Blob position={getRandompos(-10,10)} />
+              <Blob position={getRandompos(-10,10)} />
+              <Blob position={getRandompos(-10,10)} />
+              <Blob position={getRandompos(-10,10)} />
+              <Blob position={getRandompos(-10,10)} />
+              <Blob position={getRandompos(-10,10)} />
+              <Blob position={getRandompos(-10,10)} />
+              <Blob position={getRandompos(-10,10)} />
+              <Blob position={getRandompos(-10,10)} />
+              <Blob position={getRandompos(-10,10)} />
+              <Blob position={getRandompos(-10,10)} />
+              <Blob position={getRandompos(-10,10)} />
+              <Blob position={getRandompos(-10,10)} />
+              <Blob position={getRandompos(-10,10)} />
+              <Blob position={getRandompos(-10,10)} />
           </Canvas>
       </div>
 

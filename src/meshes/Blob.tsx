@@ -1,10 +1,13 @@
 import {MathUtils} from "three";
-import {useFrame} from "@react-three/fiber";
+import {useFrame, Vector3} from "@react-three/fiber";
 import {useMemo, useRef} from "react";
 import vertexShader from "../shaders/vertexBlob.glsl?raw"
 import fragmentShader from "../shaders/fragmentBlob.glsl?raw"
 
-export default function Blob(){
+type blobProps ={
+    position:Vector3
+}
+export default function Blob({position}:blobProps = {position:[0,0,0]}){
     // This reference will give us direct access to the mesh
     const mesh:any = useRef();
     const hover:any = useRef(false);
@@ -35,8 +38,8 @@ export default function Blob(){
     return (
         <mesh
             ref={mesh}
-            position={[0, 0, 0]}
-            scale={1.5}
+            position={position}
+            scale={.5}
             onPointerOver={() => (hover.current = true)}
             onPointerOut={() => (hover.current = false)}
         >
