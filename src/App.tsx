@@ -1,7 +1,7 @@
 import './App.css'
 import {Canvas, Vector3} from "@react-three/fiber";
 import {OrbitControls} from "@react-three/drei";
-import Blob from "./meshes/Blob.tsx";
+import MovingWave from "./meshes/MovingWave.tsx";
 
 
 
@@ -27,6 +27,7 @@ function App() {
           }} camera={{ position: [15, 15, 15] }}
           >
               <OrbitControls />
+              <MovingWave />
           </Canvas>
       </div>
 
