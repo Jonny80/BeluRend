@@ -12,6 +12,7 @@ function App() {
             Math.random() * (max - min) + min
         )
     }
+    // @ts-ignore
     function getRandompos(min:number, max:number):Vector3{
         return [between(min,max),between(min,max),between(min,max)]
     }
