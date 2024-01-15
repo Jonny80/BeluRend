@@ -5,7 +5,7 @@ import vertexShader from "../shaders/waveVertex.glsl?raw"
 
 
 export default function MovingWave(){
-    const mesh:any = useRef();
+    const mesh: React.MutableRefObject<undefined> = useRef();
 
     const uniforms = useMemo(
         () => ({
@@ -18,6 +18,7 @@ export default function MovingWave(){
     useFrame((state) => {
         const { clock } = state;
         mesh.current.material.uniforms.u_time.value = clock.getElapsedTime();
+
     });
 
     return (
