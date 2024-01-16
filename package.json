@@ -9,6 +9,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.3",
+    "@emotion/styled": "^11.11.0",
+    "@mui/material": "^5.15.4",
     "@react-three/drei": "^9.88.2",
     "@react-three/fiber": "^8.14.5",
     "react": "^18.2.0",
@@ -16,9 +19,9 @@
     "three": "^0.157.0"
   },
   "devDependencies": {
-    "@types/three": "^0.157.2",
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",
+    "@types/three": "^0.157.2",
     "@typescript-eslint/eslint-plugin": "^6.0.0",
     "@typescript-eslint/parser": "^6.0.0",
     "@vitejs/plugin-react": "^4.0.3",
