@@ -1,11 +1,11 @@
-import {useMemo, useRef} from "react";
+import React, {useMemo, useRef} from "react";
 import {  useFrame } from "@react-three/fiber";
 import fragmentShader from "../shaders/fragment.glsl?raw"
 import vertexShader from "../shaders/waveVertex.glsl?raw"
 
 
 export default function MovingWave(){
-    const mesh:any = useRef();
+    const mesh: React.MutableRefObject<any> = useRef();
 
     const uniforms = useMemo(
         () => ({
@@ -17,7 +17,9 @@ export default function MovingWave(){
 
     useFrame((state) => {
         const { clock } = state;
+        // @ts-ignore
         mesh.current.material.uniforms.u_time.value = clock.getElapsedTime();
+
     });
 
     return (
