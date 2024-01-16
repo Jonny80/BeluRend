@@ -12,6 +12,7 @@
     "@emotion/react": "^11.11.3",
     "@emotion/styled": "^11.11.0",
     "@mui/material": "^5.15.4",
+    "@react-three/cannon": "^6.6.0",
     "@react-three/drei": "^9.88.2",
     "@react-three/fiber": "^8.14.5",
     "react": "^18.2.0",
