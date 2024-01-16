@@ -1,7 +1,7 @@
 import './App.css'
 import {Canvas, Vector3} from "@react-three/fiber";
 import {OrbitControls} from "@react-three/drei";
-import MovingWave from "./meshes/MovingWave.tsx";
+import Blob from "./meshes/Blob.tsx";
 
 
 
@@ -28,7 +28,17 @@ function App() {
           }} camera={{ position: [15, 15, 15] }}
           >
               <OrbitControls />
-              <MovingWave />
+              {(() => {
+                  const arr = [];
+                  for (let i = 0; i < 500; i++) {
+                      let randomPos = getRandompos(-40,40);
+                      console.log(randomPos);
+                      arr.push(
+                              <Blob position={randomPos}/>
+                      );
+                  }
+                  return arr;
+              })()}
           </Canvas>
       </div>
 
