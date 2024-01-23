@@ -19,7 +19,7 @@ export default function Scene(){
             alignItems:'center',
             justifyContent:'center',
             backgroundColor:'white'
-        }} camera={{ position: [0, 0, 100]}}>
+        }} camera={{ position: [0, 0, 50]}}>
             <OrbitControls enableRotate={false}/>
             <Moon />
            <Simulation />

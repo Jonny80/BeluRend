@@ -15,7 +15,7 @@ export const Moon = () =>{
 
     return(
         <mesh ref={ref} position={new Vector3(0,0,0)}>
-            <Circle args={[10,32,32]} />
+            <Circle args={[5,32,32]} />
             <meshBasicMaterial color="rgb(0, 0, 0)" />
         </mesh>
     )
