@@ -1,16 +1,21 @@
-import {Vector3} from "@react-three/fiber";
+import { Vector3} from "three";
 
 export default class Manager {
     public blobs:Vector3[] = [];
     public amount : number;
     public min : number;
     public max : number;
-    constructor(min:number,max:number,amount:number) {
+    public withDepth:boolean;
+    public map = new Map();
+    constructor(min:number,max:number,amount:number,withDepth=false) {
+        console.log("init new manager")
         this.amount = amount;
         this.min = min;
         this.max = max;
+        this.withDepth = withDepth;
         for (let i = 0; i < amount; i++) {
-            let randomPos = this.getRandompos(min,max)
+            let randomPos:Vector3 = this.getRandompos(min,max)
+            this.map.set(Math.round(randomPos.x),Math.round(randomPos.y))
             this.blobs.push(randomPos);
         }
     }
@@ -43,6 +48,6 @@ export default class Manager {
     }
     // @ts-ignore
     getRandompos(min:number, max:number):Vector3{
-        return [this.between(min,max),this.between(min,max),this.between(min,max)]
+        return new Vector3(this.between(min,max),this.between(min,max),this.withDepth ? this.between(min,max):0);
     }
 }

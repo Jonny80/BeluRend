@@ -26,15 +26,6 @@ export default function Blob({position}:blobProps = {position:[0,0,0]}){
     );
 
     // @ts-ignore
-    function moveTo(startPosition:Vector3,target:Vector3) : Vector3 {
-        let scale = 0.05;
-        // @ts-ignore
-        let direcVec = [(target[0] - startPosition[0])*scale,(target[1] - startPosition[1])*scale,(target[2] - startPosition[2])*scale] as Vector3
-        // @ts-ignore
-        return  [(direcVec[0] + startPosition[0]),(direcVec[1] + startPosition[1]),(direcVec[2] + startPosition[2])] as Vector3
-    }
-
-    // @ts-ignore
     useFrame((state) => {
         const { clock } = state;
         //const x = (mouse.x * viewport.width) / 2
